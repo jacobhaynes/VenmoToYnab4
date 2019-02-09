@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Venmo to YNAB4</title>
+    </head>
+
+    <body>
+        <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url "convert" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+
+            <p>{{ form.docfile.label_tag }}</p>
+
+            <p>
+                {{ form.docfile.errors }}
+                {{ form.docfile }}
+            </p>
+
+            <p><input type="submit" value="Convert"/></p>
+        </form>
+    </body>
+
+</html>
