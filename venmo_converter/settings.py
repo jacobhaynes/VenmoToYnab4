@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 # .gitignored file /venmo_convert/settings_secrete.py
-from .settings_secret import GetGCloudSqlUsername,GetGCloudSqlPassword
+from .settings_secret import GetGCloudSqlUsername,GetGCloudSqlPassword,GetSecurityKey
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y&+1oysn(n#u$1460b#mo%(w5i6pavgx61*a+0+va*i^l6t6i!'
+SECRET_KEY = GetSecurityKey()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -33,8 +33,11 @@ DEBUG = False
 # See https://docs.djangoproject.com/en/2.1/ref/settings/
 ALLOWED_HOSTS = ['*']
 
-
-
+# If deployed, force SSL
+if os.getenv('GAE_APPLICATION', None):
+    SECURE_SSL_REDIRECT = True
+else:
+    SECURE_SSL_REDIRECT = False
 # Application definition
 
 INSTALLED_APPS = [
