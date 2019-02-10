@@ -64,7 +64,7 @@
   bottom: 0px;
   width: 6px;
   height: 5px;
-  background: #e04f5d;
+  background: #4f71e0;
   position: absolute;
   animation: preloader_1 1.5s infinite ease-in-out;
 }
@@ -93,22 +93,22 @@
   0% {
     height: 5px;
     transform: translateY(0px);
-    background: #e62d3f;
+    background: #2d49e6;
   }
   25% {
     height: 30px;
     transform: translateY(15px);
-    background: #e62d3f;
+    background: #2d49e6;
   }
   50% {
     height: 5px;
     transform: translateY(0px);
-    background: #ee2438;
+    background: #2475ee;
   }
   100% {
     height: 5px;
     transform: translateY(0px);
-    background: #ee2438;
+    background: #2475ee;
   }
 }
 
@@ -229,6 +229,10 @@ p {
 
 ul {
   list-style-type: none;
+}
+
+li {
+  margin-top: 5px;
 }
 
 a {
@@ -446,6 +450,7 @@ textarea {
  ***/
 
 #convert-section .convert-form {
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 

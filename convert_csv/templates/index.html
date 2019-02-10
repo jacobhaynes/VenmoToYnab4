@@ -55,17 +55,17 @@
 			<section id="how-to">
 				<div class="container">
 					<div class="theme-title">
-						<h2>HOW TO</h2>
-						<p>
-							<ul>
-								<li>Go to to the Venmo Statement Page: <a href="https://venmo.com/account/statement">https://venmo.com/account/statement</a></li>
-								<li>Select a date range</li>
-								<li>Click "Download CSV"</li>
-								<li>Select File Below</li>
-								<li>Press Submit</li>
-								<li>The file should start downloading</li>
-							</ul>
-						</p>
+						<h2>CONVERSTION</h2>
+						<p></p>
+						<ul>
+							<li>Open the Venmo statement page: <br><a href="https://venmo.com/account/statement" target="_blank">https://venmo.com/account/statement</a></li>
+							<li>Select a date range.</li>
+							<li>Click "Download CSV".</li>
+							<li>Select file below.</li>
+							<li>Press submit and download. The converted file should start downloading. </li>
+							<li>Open in YNAB 4 with "File"->"Import Transactions from Your Bank".</li>
+						</ul>
+						
 					</div> <!-- /.theme-title -->
 				</div> <!-- /.container -->
 			</section> <!-- /#how-to -->
@@ -83,7 +83,7 @@
 							{% csrf_token %}
 							{{ form.docfile }}
 							<br>
-							<button class="tran3s p-color-bg">Convert</button>
+							<button class="tran3s p-color-bg">Convert and Download</button>
 						</form>
 					</div> <!-- /.convert-form -->
 				</div> <!-- /.container -->
@@ -91,7 +91,7 @@
 	
 			<div class="page-middle-banner">
 				<div class="opacity">
-					<a href="https://github.com/jacobhaynes/VenmoToYnab4" class="hvr-bounce-to-right">See on Gihub</a>
+					<a href="https://github.com/jacobhaynes/VenmoToYnab4" target="_blank" class="hvr-bounce-to-right">See on Gihub</a>
 				</div> <!-- /.opacity -->
 			</div> <!-- /.page-middle-banner -->
 
