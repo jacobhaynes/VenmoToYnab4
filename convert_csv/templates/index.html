@@ -13,7 +13,7 @@
 		<title>Venmo To YNAB 4</title>
 
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="{% static 'images/fav-icon/icon.png' %}">
+		<link rel="icon" type="image/png" sizes="56x56" href="{% static 'images/cabriolet.png' %}">
 
 
 		<!-- Main style sheet -->
@@ -49,96 +49,53 @@
 
 	        <!--
 			=====================================================
-				About us Section
+				How to Section
 			=====================================================
 			-->
-			<section id="about-us">
-					<div class="container">
-						<div class="theme-title">
-							<h2>HOW TO</h2>
-							<p>
-								<ul>
-									<li>Go to to the Venmo Statement Page: <a href="https://venmo.com/account/statement">https://venmo.com/account/statement</a></li>
-									<li>Select a date range</li>
-									<li>Click "Download CSV"</li>
-									<li>Select File Below</li>
-									<li>Press Submit</li>
-									<li>The file should start downloading</li>
-								</ul>
-							</p>
-						</div> <!-- /.theme-title -->
-	
-					</div> <!-- /.container -->
-				</section> <!-- /#about-us -->
+			<section id="how-to">
+				<div class="container">
+					<div class="theme-title">
+						<h2>HOW TO</h2>
+						<p>
+							<ul>
+								<li>Go to to the Venmo Statement Page: <a href="https://venmo.com/account/statement">https://venmo.com/account/statement</a></li>
+								<li>Select a date range</li>
+								<li>Click "Download CSV"</li>
+								<li>Select File Below</li>
+								<li>Press Submit</li>
+								<li>The file should start downloading</li>
+							</ul>
+						</p>
+						<p></p>
+					</div> <!-- /.theme-title -->
+
+				</div> <!-- /.container -->
+			</section> <!-- /#how-to -->
+			
 			<!--
 			=====================================================
 				File Convert
 			=====================================================
 			-->
-			<div id="contact-section">
-					<div class="container">
-						<!-- Contact Form -->
-						<div class="send-message">
-							<form action="{% url "convert" %}" method="post" enctype="multipart/form-data">
-								{% csrf_token %}
-								{{ form.docfile }}
-								<br>
-								<!--TODO: Can we make the choose a file button look better?
-									<div class="upload-btn-wrapper">
-									{{ form.docfile }}
-									<button class="tran3s p-color-bg">Choose a File</button>
-								</div>-->
-								<button class="tran3s p-color-bg">Convert</button>
-								<style>
-									.upload-btn-wrapper {
-										position: relative;
-										overflow: hidden;
-										display: inline-block;
-										}
-									.upload-btn-wrapper input[type=file] {
-									font-size: 100px;
-									position: absolute;
-									left: 0;
-									top: 0;
-									opacity: 0;
-									}
-								</style>
-							</form>
-	
-	
-							<!-- Contact Form Validation Markup -->
-							<!-- Contact alert -->
-							<div class="alert-wrapper" id="alert-success">
-								<div id="success">
-									<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-									<div class="wrapper">
-										   <p>Your message was sent successfully.</p>
-									 </div>
-								</div>
-							</div> <!-- End of .alert_wrapper -->
-							<div class="alert-wrapper" id="alert-error">
-								<div id="error">
-									   <button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-									   <div class="wrapper">
-										   <p>Sorry!Something Went Wrong.</p>
-									</div>
-								</div>
-							</div> <!-- End of .alert_wrapper -->
-						</div> <!-- /.send-message -->
-					</div> <!-- /.container -->
-				</div> <!-- /#contact-section -->
+			<div id="convert-section">
+				<div class="container">
+					<!-- Convert Form -->
+					<div class="convert-form">
+						<form action="{% url "convert" %}" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+							{{ form.docfile }}
+							<br>
+							<button class="tran3s p-color-bg">Convert</button>
+						</form>
+					</div> <!-- /.convert-form -->
+				</div> <!-- /.container -->
+			</div> <!-- /#convert-section -->
 	
 			<div class="page-middle-banner">
 				<div class="opacity">
 					<a href="#" class="hvr-bounce-to-right">See on Gihub</a>
 				</div> <!-- /.opacity -->
 			</div> <!-- /.page-middle-banner -->
-				
-
-
-
-
-
 
 			<!--
 			=====================================================
@@ -146,29 +103,19 @@
 			=====================================================
 			-->
 			<footer>
-				<div class="container">
-					<!--<a href="index.html" class="logo"><img src="{% static 'images/logo/logo.png' %}" alt="Logo"></a>-->
-
-					<!---x<ul>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="tran3s round-border"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-					</ul>--->
-					<p> This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-				</div>
+				<div class="opacity">
+					<div class="container">
+						This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>. 
+						Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0
+					</div>
+				</div>>
 			</footer>
 
-
-
-
-			<!-- =============================================
+			<!-- 
+			=============================================
 				Loading Transition
-			============================================== -->
+			============================================== 
+			-->
 			<div id="loader-wrapper">
 				<div id="preloader_1">
 	                <span></span>
@@ -185,47 +132,43 @@
 				<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 			</button>
 
+			<!-- Js File_________________________________ -->
+
+			<!-- j Query -->
+			<script type="text/javascript" src="{% static 'vendor/jquery.2.2.3.min.js' %}"></script>
+
+			<!-- Bootstrap JS -->
+			<script type="text/javascript" src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
+
+			<!-- Vendor js _________ -->
+			
+			<!-- revolution -->
+			<script src="{% static 'vendor/revolution/jquery.themepunch.tools.min.js' %}"></script>
+			<script src="{% static 'vendor/revolution/jquery.themepunch.revolution.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.slideanims.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.layeranimation.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.navigation.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.kenburn.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.actions.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.video.min.js' %}"></script>
+
+			<!-- Google map js -->
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=goMap" type="text/javascript"></script> <!-- Gmap Helper -->
+			<script src="{% static 'vendor/gmaps.min.js' %}"></script>
+			<!-- owl.carousel -->
+			<script type="text/javascript" src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+			<!-- mixitUp -->
+			<script type="text/javascript" src="{% static 'vendor/jquery.mixitup.min.js' %}"></script>
+			<!-- Progress Bar js -->
+			<script type="text/javascript" src="{% static 'vendor/skills-master/jquery.skills.js' %}"></script>
+			<!-- Validation -->
+			<script type="text/javascript" src="{% static 'vendor/contact-form/validate.js' %}"></script>
+			<script type="text/javascript" src="{% static 'vendor/contact-form/jquery.form.js' %}"></script>
 
 
-
-		<!-- Js File_________________________________ -->
-
-		<!-- j Query -->
-		<script type="text/javascript" src="{% static 'vendor/jquery.2.2.3.min.js' %}"></script>
-
-		<!-- Bootstrap JS -->
-		<script type="text/javascript" src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
-
-		<!-- Vendor js _________ -->
-		
-		<!-- revolution -->
-		<script src="{% static 'vendor/revolution/jquery.themepunch.tools.min.js' %}"></script>
-		<script src="{% static 'vendor/revolution/jquery.themepunch.revolution.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.slideanims.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.layeranimation.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.navigation.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.kenburn.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.actions.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/revolution/revolution.extension.video.min.js' %}"></script>
-
-		<!-- Google map js -->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ8VrXgGZ3QSC-0XubNhuB2uKKCwqVaD0&callback=goMap" type="text/javascript"></script> <!-- Gmap Helper -->
-		<script src="{% static 'vendor/gmaps.min.js' %}"></script>
-		<!-- owl.carousel -->
-		<script type="text/javascript" src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
-		<!-- mixitUp -->
-		<script type="text/javascript" src="{% static 'vendor/jquery.mixitup.min.js' %}"></script>
-		<!-- Progress Bar js -->
-		<script type="text/javascript" src="{% static 'vendor/skills-master/jquery.skills.js' %}"></script>
-		<!-- Validation -->
-		<script type="text/javascript" src="{% static 'vendor/contact-form/validate.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendor/contact-form/jquery.form.js' %}"></script>
-
-
-		<!-- Theme js -->
-		<script type="text/javascript" src="{% static 'js/theme.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/map-script.js' %}"></script>
-
+			<!-- Theme js -->
+			<script type="text/javascript" src="{% static 'js/theme.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/map-script.js' %}"></script>
 		</div> <!-- /.main-page-wrapper -->
 	</body>
 </html>
