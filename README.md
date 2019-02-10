@@ -24,3 +24,9 @@ DATABASES = {
     }
 }
 ```
+
+## TODOs 
+
+It would be nice if this was a OFX/QFX instead of CSV so it would be more flexible. Maybe leverage: https://github.com/reubano/csv2ofx
+
+Error handling is pretty much non-existant: Things will fail if we get an invalid file. 
