@@ -18,5 +18,6 @@ from django.urls import include,path
 
 urlpatterns = [
     path('convert_csv', include('convert_csv.urls')),
+    path('', include('convert_csv.urls')),
     path('admin/', admin.site.urls),
 ]
