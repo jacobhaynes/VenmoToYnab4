@@ -44,10 +44,32 @@
 			<div class="page-middle-banner">
 				<div class="opacity">
 					<h3>Convert Venmo <span class="p-color">to</span> YNAB4</h3>
-					<a href="#" class="hvr-bounce-to-right">View Gihub</a>
 				</div> <!-- /.opacity -->
 			</div> <!-- /.page-middle-banner -->
 
+	        <!--
+			=====================================================
+				About us Section
+			=====================================================
+			-->
+			<section id="about-us">
+					<div class="container">
+						<div class="theme-title">
+							<h2>HOW TO</h2>
+							<p>
+								<ul>
+									<li>Go to to the Venmo Statement Page: <a href="https://venmo.com/account/statement">https://venmo.com/account/statement</a></li>
+									<li>Select a date range</li>
+									<li>Click "Download CSV"</li>
+									<li>Select File Below</li>
+									<li>Press Submit</li>
+									<li>The file should start downloading</li>
+								</ul>
+							</p>
+						</div> <!-- /.theme-title -->
+	
+					</div> <!-- /.container -->
+				</section> <!-- /#about-us -->
 			<!--
 			=====================================================
 				File Convert
@@ -59,10 +81,13 @@
 						<div class="send-message">
 							<form action="{% url "convert" %}" method="post" enctype="multipart/form-data">
 								{% csrf_token %}
-								<div class="upload-btn-wrapper">
+								{{ form.docfile }}
+								<br>
+								<!--TODO: Can we make the choose a file button look better?
+									<div class="upload-btn-wrapper">
 									{{ form.docfile }}
 									<button class="tran3s p-color-bg">Choose a File</button>
-								</div>
+								</div>-->
 								<button class="tran3s p-color-bg">Convert</button>
 								<style>
 									.upload-btn-wrapper {
@@ -109,160 +134,9 @@
 				</div> <!-- /.opacity -->
 			</div> <!-- /.page-middle-banner -->
 				
-	        <!--
-			=====================================================
-				About us Section
-			=====================================================
-			-->
-			<section id="about-us">
-				<div class="container">
-					<div class="theme-title">
-						<h2>ABOUT OUR BIZPRO</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-					</div> <!-- /.theme-title -->
-
-					<div class="row">
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">Web Development</a></h5>
-								<p>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-camera" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">PHOTOGRAPHY</a></h5>
-								<p>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-life-ring" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">Digital Media</a></h5>
-								<p>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-
-						<div class="col-lg-3 col-md-3 col-sm-6">
-							<div class="single-about-content">
-								<div class="icon round-border tran3s">
-									<i class="fa fa-line-chart" aria-hidden="true"></i>
-								</div>
-								<h5><a href="#" class="tran3s">Online Marketing</a></h5>
-								<p>Lorem ipsum dolor sit amet, consect et adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-								<a href="#" class="more tran3s hvr-bounce-to-right">More Details</a>
-							</div> <!-- /.single-about-content -->
-						</div> <!-- /.col -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-			</section> <!-- /#about-us -->
 
 
 
-
-
-			<!--
-			=====================================================
-				Contact Section
-			=====================================================
-			-->
-			<div id="contact-section">
-				<div class="container">
-					<div class="clear-fix contact-address-content">
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div>
-								<h2>Contact Info</h2>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majori have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a pas of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. <br><br>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ididunt ut labore et dolore magna aliqua.</p>
-
-								<ul>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-										<h6>Address</h6>
-										<p>Freedom Way, Jersey City, NJ 07305, USA</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-phone" aria-hidden="true"></i></div>
-										<h6>Phone</h6>
-										<p>+88 01911854378</p>
-									</li>
-									<li>
-										<div class="icon tran3s round-border p-color-bg"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-										<h6>Email</h6>
-										<p>backpiper.com@gmail.com</p>
-									</li>
-								</ul>
-							</div> <!-- /.left-side -->
-						</div> <!-- /.col- -->
-					</div> <!-- /.contact-address-content -->
-
-
-
-					<!-- Contact Form -->
-					<div class="send-message">
-						<h2>Send Message</h2>
-
-						<form action="inc/sendemail.php" class="form-validation" autocomplete="off" method="post">
-							<div class="row">
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="First Name*" name="Fname">
-									</div> <!-- /.single-input -->
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-									<div class="single-input">
-										<input type="text" placeholder="Last Name*" name="Lname">
-									</div> <!-- /.single-input -->
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-									<div class="single-input">
-										<input type="email" placeholder="Your Email*" name="email">
-									</div> <!-- /.single-input -->
-								</div>
-							</div> <!-- /.row -->
-							<div class="single-input">
-								<input type="text" placeholder="Subject" name="sub">
-							</div> <!-- /.single-input -->
-							<textarea placeholder="Write Message" name="message"></textarea>
-
-
-							<button class="tran3s p-color-bg">Send Message</button>
-						</form>
-
-
-						<!-- Contact Form Validation Markup -->
-						<!-- Contact alert -->
-						<div class="alert-wrapper" id="alert-success">
-							<div id="success">
-								<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-								<div class="wrapper">
-					               	<p>Your message was sent successfully.</p>
-					             </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					    <div class="alert-wrapper" id="alert-error">
-					        <div id="error">
-					           	<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-					           	<div class="wrapper">
-					               	<p>Sorry!Something Went Wrong.</p>
-					            </div>
-					        </div>
-					    </div> <!-- End of .alert_wrapper -->
-					</div> <!-- /.send-message -->
-				</div> <!-- /.container -->
-			</div> <!-- /#contact-section -->
 
 
 
@@ -273,9 +147,9 @@
 			-->
 			<footer>
 				<div class="container">
-					<a href="index.html" class="logo"><img src="{% static 'images/logo/logo.png' %}" alt="Logo"></a>
+					<!--<a href="index.html" class="logo"><img src="{% static 'images/logo/logo.png' %}" alt="Logo"></a>-->
 
-					<ul>
+					<!---x<ul>
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
@@ -284,8 +158,8 @@
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
 						<li><a href="#" class="tran3s round-border"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-					</ul>
-					<p>Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+					</ul>--->
+					<p> This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
 				</div>
 			</footer>
 
