@@ -71,4 +71,4 @@ def convert(request):
 
     # Render list page with the form
     # 
-    return render(request, 'list.html', { 'form': form })
+    return render(request, 'index.html', { 'form': form })

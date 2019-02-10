@@ -1,6 +1,7 @@
 venmo_converter/settings_secret.py
-static/
-
+.DS_STORE
+.vscode
+/static
 
 # Created by https://www.gitignore.io/api/django
 # Edit at https://www.gitignore.io/?templates=django
