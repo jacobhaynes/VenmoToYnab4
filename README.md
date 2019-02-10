@@ -5,7 +5,7 @@ This project provides a simple web interface to convert the CSV from Venmo -> St
 
 1. Log into your Venmo Account 
 2. Go to Statements and select the range you would like to download, then click the download CSV button. 
-3. Visit: [https://venmotoynab4.appspot.com/](https://venmotoynab4.appspot.com/_) and select that CSV 
+3. Visit: [venmotoynab.com](https://venmotoynab.com) and select that CSV 
 4. Click the Convert. You should see a download for the new CSV that is parsable by YNAB (ending in _ynab4.csv); 
 5. In YNAB 4, click "File"->"Import Transcations from your Bank", choose the file and the correct account and it should import. 
 
@@ -24,3 +24,9 @@ DATABASES = {
     }
 }
 ```
+
+## TODOs 
+
+It would be nice if this was a OFX/QFX instead of CSV so it would be more flexible. Maybe leverage: https://github.com/reubano/csv2ofx
+
+Error handling is pretty much non-existant: Things will fail if we get an invalid file. 
