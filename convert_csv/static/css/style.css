@@ -310,7 +310,7 @@ textarea {
 
 .theme-title {
   text-align: center;
-  margin: 95px 0 0 0;
+  margin: 45px 0 0 0;
 }
 
 .theme-title h2 {
@@ -340,14 +340,14 @@ textarea {
 #convert-section .convert-form form button:hover,
 .theme-main-menu.navbar .nav>li ul li a:hover
 {
-  color: #d73e4d;
+  color: #2454cc;
 }
 
 .p-color-bg,
 .theme-title h2:before,
 #how-to.single-about-content:hover .icon,
 .blog-details-post-wrapper .comment-area .single-comment .comment button:hover {
-  background: #d73e4d;
+  background: #2454cc;
 }
 
 .banner .project-button,
@@ -355,7 +355,7 @@ textarea {
 #how-to.single-about-content a.more,
 .page-middle-banner .opacity a,
 #convert-section .convert-form form button {
-  border-color: #d73e4d;
+  border-color: #2454cc;
   border-style: solid;
 }
 
