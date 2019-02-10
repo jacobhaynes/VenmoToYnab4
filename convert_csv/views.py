@@ -55,6 +55,32 @@ def convert_file(input_file, output_file):
 def convert(request):
     # Handle file upload
     if request.method == 'POST':
+        print("Cponvert Request"); 
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            doc = request.FILES['docfile']
+
+            # Create the HttpResponse object with the appropriate CSV header.
+            response = HttpResponse(content_type='text/csv')
+            response['Content-Disposition'] = "attachment; filename=\"{doc_name}_ynab4.csv\"".format(doc_name=str(doc).replace(".csv", ""))
+
+            convert_file(doc, response)
+
+            print("Response"); 
+            return response
+        else:
+            print("invalid"); 
+            return
+    else:
+        form = DocumentForm() # A empty, unbound form
+
+    # Render list page with the form
+    # 
+    return render(request, 'index.html', { 'form': form })
+
+def convert_old(request):
+    # Handle file upload
+    if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             doc = request.FILES['docfile']
@@ -71,4 +97,4 @@ def convert(request):
 
     # Render list page with the form
     # 
-    return render(request, 'index.html', { 'form': form })
+    return render(request, 'list.html', { 'form': form })
