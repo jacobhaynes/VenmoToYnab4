@@ -19,6 +19,9 @@ def convert_row(row):
     memo = row['Note']
     tmpdate = row['Datetime'].split(' ')
     tmpdate = ' '.join(tmpdate[:4] + tmpdate[5:])
+    if not tmpdate.strip(): 
+        return [False, {}]
+
     date = datetime.strptime(tmpdate, VENMO_DATE_FORMAT).strftime(YNAB_DATE_FORMAT)
     amount = float(row['Amount (total)'].replace(' $', '').replace(',', ''))
     if amount < 0:
@@ -30,13 +33,13 @@ def convert_row(row):
         outflow = None
         payee = row['From']
 
-    return {
+    return [True, {
         'Inflow': inflow,
         'Outflow': outflow,
         'Date': date,
         'Payee': payee,
         'Memo': memo,
-    }
+    }]
 
 def convert_file(input_file, output_file): 
     decoded_file = input_file.read().decode('utf-8').splitlines()
@@ -49,8 +52,10 @@ def convert_file(input_file, output_file):
 
     output_writer.writeheader()
     for row in input_reader:
-        print(convert_row(row))
-        output_writer.writerow(convert_row(row))
+        [valid, converted] = convert_row(row)
+        if valid:
+            print(converted)
+            output_writer.writerow(converted)
 
 def convert(request):
     # Handle file upload
