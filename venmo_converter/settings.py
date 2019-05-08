@@ -24,8 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = GetSecurityKey()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.getenv('GAE_APPLICATION', None):
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+else: 
+    DEBUG = True
 
 # SECURITY WARNING: App Engine's security features ensure that it is safe to
 # have ALLOWED_HOSTS = ['*'] when the app is deployed. If you deploy a Django
@@ -107,7 +110,7 @@ else:
     # Running locally so connect to either a local MySQL instance or connect to
     # Cloud SQL via the proxy. To start the proxy via command line:
     #
-    #     $ cloud_sql_proxy -instances=venmotoynab4:us-central1:venmotoynab4=tcp:3306
+    #     $ q
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
